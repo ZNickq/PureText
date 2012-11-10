@@ -10,4 +10,8 @@ class QuestionHandler < MenuHandler
     puts "Question menu!"
   end
   
+  def is_valid_answer(op)
+    return op.is_a? Integer || op == "q" || op == "m"
+  end
+  
 end
