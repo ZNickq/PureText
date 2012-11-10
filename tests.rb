@@ -1,5 +1,6 @@
 require 'test/unit'
 require_relative 'question'
+require_relative 'questionhandler'
 
 class Tests < Test::Unit::TestCase
   def test_null_question
@@ -14,5 +15,13 @@ class Tests < Test::Unit::TestCase
     question.title = "What's TDD?"
     assert_equal(question.title, "What's TDD?")
   end
+  
+  def test_question_handler
+    qh = QuestionHandler.new
+    assert_nothing_raised do
+        qh.show_menu
+    end
+  end
+  
 end
 
