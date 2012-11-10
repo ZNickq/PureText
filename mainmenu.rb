@@ -18,7 +18,16 @@ class MainMenuHandler < MenuHandler
   end
   
   def on_option(op)
-    puts "Selected: "+op
+    if(op == "1")
+        return QuestionListHandler.new(@main, self)
+    end
+    if(op == "2")
+        return NewQuestionHandler.new(@main, self)
+    end
+    if(op == "q")
+        return nil
+    end
+    return self
   end
 
 end

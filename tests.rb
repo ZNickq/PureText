@@ -1,6 +1,11 @@
 require 'test/unit'
+require_relative 'menu'
 require_relative 'question'
+require_relative 'loginmenu'
 require_relative 'questionmenu'
+require_relative 'questionlistmenu'
+require_relative 'newquestionmenu'
+require_relative 'mainmenu'
 
 class Tests < Test::Unit::TestCase
   def test_null_question
@@ -17,15 +22,16 @@ class Tests < Test::Unit::TestCase
   end
   
   def test_question_handler
-    qh = QuestionHandler.new
+    qh = NewQuestionHandler.new(nil, nil)
     assert_nothing_raised do
         qh.show_menu
     end
   end
   
-  def test_random_answer
-    qh = QuestionHandler.new
-    assert(!qh.is_valid_answer("tralala"))
+  def test_twice_vote
+    qh = Question.new
+    qh.can_vote("ZNickq")
+    assert(!qh.can_vote("ZNickq"))
   end
   
 end

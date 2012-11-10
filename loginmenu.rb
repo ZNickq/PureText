@@ -1,7 +1,3 @@
-require_relative 'menu'
-require_relative 'mainmenu'
-require_relative 'question'
-
 class LoginHandler < MenuHandler
   def initialize(main)
     @main = main

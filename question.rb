@@ -7,6 +7,10 @@ class Question
     @answers = []
   end
   
+  def can_vote(user)
+    return true
+  end
+  
   attr :title, true
   attr :body, true
   attr :author, true
