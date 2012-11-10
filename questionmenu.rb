@@ -1,4 +1,4 @@
-require_relative 'pto'
+require_relative 'menu'
 require_relative 'question'
 
 class QuestionHandler < MenuHandler
@@ -7,7 +7,7 @@ class QuestionHandler < MenuHandler
   end
   
   def show_menu
-    puts "Main menu!"
+    puts "Question menu!"
   end
   
 end

@@ -1,30 +1,25 @@
+require_relative 'loginmenu'
+
 class PureTextOverflow
+
   def self.start
-    banner_text = "Hello there!"
-    keyboard_input = ""
-    prompt_with = "Say something:"
-#    loop do
-#      system("clear")
-#      puts banner_text
-#      puts keyboard_input
-#      puts
-#      puts prompt_with
-#     banner_text = "You said:"
-#     keyboard_input = gets.chomp
-#     prompt_with = "Say something else:"
-#   end
-  end
-end
-
-class MenuHandler
-
-  def show_menu
-    raise "Error, a handler didn't properly override show_menu!"
+    menu = LoginHandler.new(self)
+    loop do
+      system("clear")  
+      menu.show_menu
+      option = gets.chomp
+      puts option
+      menu = menu.on_option(option)
+   end
   end
   
-  def on_option(op)
+  def self.set_user(usr)
+    @username = usr
   end
-
+  
+  def self.user
+    return @username
+  end
 end
 
 PureTextOverflow.start

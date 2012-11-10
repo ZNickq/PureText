@@ -1,6 +1,6 @@
 require 'test/unit'
 require_relative 'question'
-require_relative 'questionhandler'
+require_relative 'questionmenu'
 
 class Tests < Test::Unit::TestCase
   def test_null_question
