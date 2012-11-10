@@ -6,4 +6,8 @@ class QuestionHandler < MenuHandler
     
   end
   
+  def show_menu
+    puts "Main menu!"
+  end
+  
 end
