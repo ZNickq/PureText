@@ -2,7 +2,7 @@ class Question
   def initialize
   end
   
-  attr :title, false
+  attr :title, true
   attr :body, true
   attr :author, true
   attr :votes, true
