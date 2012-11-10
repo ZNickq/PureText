@@ -5,9 +5,14 @@ class Question
     @author = "NotSet"
     @votes = 0
     @answers = []
+    @voters = []
   end
   
   def can_vote(user)
+    if @voters.include?(user)
+      return false
+    end
+    @voters << user
     return true
   end
   
