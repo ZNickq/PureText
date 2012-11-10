@@ -23,5 +23,10 @@ class Tests < Test::Unit::TestCase
     end
   end
   
+  def test_random_answer
+    qh = QuestionHandler.new
+    assert(!qh.is_valid_answer("tralala"))
+  end
+  
 end
 

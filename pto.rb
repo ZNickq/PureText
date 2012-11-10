@@ -8,8 +8,9 @@ class PureTextOverflow
       system("clear")  
       menu.show_menu
       option = gets.chomp
-      puts option
-      menu = menu.on_option(option)
+      if menu.is_valid_answer(option)
+        menu = menu.on_option(option)
+      end
    end
   end
   
